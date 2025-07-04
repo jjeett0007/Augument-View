@@ -7,7 +7,7 @@ import type { ModelViewerElement } from '@r2u/react-ar-components'
 
 export default function ARModel() {
     // const usdz = 'http://localhost:8080/mesh_01000.usdz'
-    const glb = '/mini_room_art_copy.glb'
+    const glb = 'https://jv34vrtg2pneejhw.public.blob.vercel-storage.com/scifi_vr_rooms-SI35TkX11CMj25myrUWeyHtFapmEID.glb'
     const imageUrl = 'https://tnga.github.io/sharedbazar/img/react-aframe.png'
     const viewerRef = createRef<ModelViewerElement>()
 
