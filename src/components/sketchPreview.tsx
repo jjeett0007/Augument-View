@@ -39,21 +39,6 @@ function Model({ url }: { url: string }) {
 }
 
 
-function EnablePointerLock() {
-    const { gl } = useThree();
-
-    useEffect(() => {
-        const canvas = gl.domElement;
-        const requestPointerLock = () => {
-            canvas.requestPointerLock?.();
-        };
-        canvas.addEventListener('click', requestPointerLock);
-        return () => canvas.removeEventListener('click', requestPointerLock);
-    }, [gl]);
-
-    return null;
-}
-
 export default function SketchViewer({ modelUrl }: { modelUrl: string }) {
     return (
         <div className="w-full h-screen">
@@ -70,19 +55,9 @@ export default function SketchViewer({ modelUrl }: { modelUrl: string }) {
                     />
                 </Suspense>
 
-                <EnablePointerLock />
+                {/* <EnablePointerLock /> */}
 
-                {/* 🧭 First person controls instead of OrbitControls */}
-                {/* <FirstPersonControls
-                    lookSpeed={0.1}
-                    movementSpeed={3}
-                    lookVertical={true}
-                    constrainVertical={false}
-                    enabled={true}
-                    activeLook={true}
-                /> */}
-
-                <OrbitControls enablePan enableZoom enableRotate />
+                <OrbitControls enablePan enableZoom enableRotate enableDamping={false} />
             </Canvas>
         </div>
     );
