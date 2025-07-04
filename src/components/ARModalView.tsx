@@ -1,5 +1,5 @@
 "use client"
-import React, { createRef } from 'react'
+import React, { createRef, useEffect } from 'react'
 import '@google/model-viewer';
 import { ModelViewer, activateAR } from '@r2u/react-ar-components'
 import type { ModelViewerElement } from '@r2u/react-ar-components'
@@ -10,6 +10,11 @@ export default function ARModel() {
     const glb = '/mini_room_art_copy.glb'
     const imageUrl = 'https://tnga.github.io/sharedbazar/img/react-aframe.png'
     const viewerRef = createRef<ModelViewerElement>()
+
+    // useEffect(() => {
+    //     // Dynamically import only in client
+    //     import('@google/model-viewer');
+    // }, []);
 
     return (
         <>
