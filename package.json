@@ -20,10 +20,10 @@
   "name": "augument-view",
   "private": true,
   "scripts": {
-    "build": "node init && next build",
-    "dev": "node init && next dev --turbopack",
+    "build": "next build",
+    "dev": "next dev --turbopack",
     "lint": "next lint",
-    "start": "node init && next start"
+    "start": "next start"
   },
   "version": "0.1.0"
 }
